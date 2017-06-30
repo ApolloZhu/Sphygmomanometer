@@ -11,8 +11,13 @@
 		524D51E21F05458300E2A5E3 /* AZEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D51E11F05458300E2A5E3 /* AZEntryViewController.swift */; };
 		524D51E51F05458400E2A5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D51E31F05458400E2A5E3 /* Main.storyboard */; };
 		524D51E71F05458400E2A5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524D51E61F05458400E2A5E3 /* Assets.xcassets */; };
-		524D51F31F0547B500E2A5E3 /* AZHealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D51F21F0547B500E2A5E3 /* AZHealthKit.swift */; };
+		524D51F31F0547B500E2A5E3 /* AZDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D51F21F0547B500E2A5E3 /* AZDataType.swift */; };
 		524D51F71F05485900E2A5E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524D51F61F05485900E2A5E3 /* HealthKit.framework */; };
+		52C6AF831F0614450068F93B /* AZAuxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AF821F0614450068F93B /* AZAuxiliary.swift */; };
+		52C6AF851F06174D0068F93B /* AZProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AF841F06174D0068F93B /* AZProcess.swift */; };
+		52CF0D311F06C9D400D5B03E /* AZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF0D301F06C9D400D5B03E /* AZButton.swift */; };
+		52CF0D331F06D49F00D5B03E /* AZHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF0D321F06D49F00D5B03E /* AZHistoryViewController.swift */; };
+		52CF0D351F06DCE900D5B03E /* AZTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF0D341F06DCE900D5B03E /* AZTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +27,15 @@
 		524D51E41F05458400E2A5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		524D51E61F05458400E2A5E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524D51EB1F05458400E2A5E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		524D51F21F0547B500E2A5E3 /* AZHealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZHealthKit.swift; sourceTree = "<group>"; };
+		524D51F21F0547B500E2A5E3 /* AZDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZDataType.swift; sourceTree = "<group>"; };
 		524D51F41F05484400E2A5E3 /* Sphygmomanometer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sphygmomanometer.entitlements; sourceTree = "<group>"; };
 		524D51F61F05485900E2A5E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		526FC49D1F0596B0003F8041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52C6AF821F0614450068F93B /* AZAuxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZAuxiliary.swift; sourceTree = "<group>"; };
+		52C6AF841F06174D0068F93B /* AZProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZProcess.swift; sourceTree = "<group>"; };
+		52CF0D301F06C9D400D5B03E /* AZButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZButton.swift; sourceTree = "<group>"; };
+		52CF0D321F06D49F00D5B03E /* AZHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZHistoryViewController.swift; sourceTree = "<group>"; };
+		52CF0D341F06DCE900D5B03E /* AZTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AZTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +74,8 @@
 				524D51E61F05458400E2A5E3 /* Assets.xcassets */,
 				524D51F41F05484400E2A5E3 /* Sphygmomanometer.entitlements */,
 				524D51E11F05458300E2A5E3 /* AZEntryViewController.swift */,
-				524D51F21F0547B500E2A5E3 /* AZHealthKit.swift */,
+				52CF0D371F06EB7400D5B03E /* HistoryVC */,
+				52C6AF861F0617830068F93B /* Model */,
 				526FC49C1F0596B0003F8041 /* LaunchScreen.storyboard */,
 				524D51E31F05458400E2A5E3 /* Main.storyboard */,
 				524D51EB1F05458400E2A5E3 /* Info.plist */,
@@ -78,6 +89,34 @@
 				524D51F61F05485900E2A5E3 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52C6AF861F0617830068F93B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C6AF821F0614450068F93B /* AZAuxiliary.swift */,
+				524D51F21F0547B500E2A5E3 /* AZDataType.swift */,
+				52C6AF841F06174D0068F93B /* AZProcess.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52CF0D361F06EB5B00D5B03E /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				52CF0D341F06DCE900D5B03E /* AZTableViewCell.swift */,
+				52CF0D301F06C9D400D5B03E /* AZButton.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		52CF0D371F06EB7400D5B03E /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				52CF0D321F06D49F00D5B03E /* AZHistoryViewController.swift */,
+				52CF0D361F06EB5B00D5B03E /* Control */,
+			);
+			path = HistoryVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524D51F31F0547B500E2A5E3 /* AZHealthKit.swift in Sources */,
+				52CF0D331F06D49F00D5B03E /* AZHistoryViewController.swift in Sources */,
+				52CF0D311F06C9D400D5B03E /* AZButton.swift in Sources */,
+				524D51F31F0547B500E2A5E3 /* AZDataType.swift in Sources */,
 				524D51E21F05458300E2A5E3 /* AZEntryViewController.swift in Sources */,
+				52C6AF851F06174D0068F93B /* AZProcess.swift in Sources */,
+				52C6AF831F0614450068F93B /* AZAuxiliary.swift in Sources */,
+				52CF0D351F06DCE900D5B03E /* AZTableViewCell.swift in Sources */,
 				524D51E01F05458300E2A5E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

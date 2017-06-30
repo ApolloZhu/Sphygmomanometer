@@ -152,8 +152,30 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Skb-dC-ePm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2oq-Y9-icv">
                                         <rect key="frame" x="0.0" y="176" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2oq-Y9-icv" id="P8a-7w-1z2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vWN-lv-6L6">
+                                                    <rect key="frame" x="20" y="-86" width="374" height="216"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="520545346.87211603">
+                                                        <!--2017-06-30 19:55:46 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vWN-lv-6L6" firstAttribute="centerY" secondItem="P8a-7w-1z2" secondAttribute="centerY" id="7iG-12-HhL"/>
+                                                <constraint firstAttribute="trailing" secondItem="vWN-lv-6L6" secondAttribute="trailing" constant="20" symbolic="YES" id="X22-lZ-JGl"/>
+                                                <constraint firstItem="vWN-lv-6L6" firstAttribute="centerX" secondItem="P8a-7w-1z2" secondAttribute="centerX" id="d7n-wb-6gA"/>
+                                                <constraint firstItem="vWN-lv-6L6" firstAttribute="leading" secondItem="P8a-7w-1z2" secondAttribute="leading" constant="20" symbolic="YES" id="h0H-dL-Skq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Skb-dC-ePm">
+                                        <rect key="frame" x="0.0" y="220" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Skb-dC-ePm" id="7B2-xy-dy7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -174,7 +196,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="1000" id="yS4-gT-kbe">
-                                        <rect key="frame" x="0.0" y="220" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="264" width="414" height="1000"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yS4-gT-kbe" id="HfS-r0-yzM">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -202,8 +224,16 @@
                             <outlet property="delegate" destination="9Vm-Xp-dDd" id="Gf8-3B-9Du"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="OMRON HEM-6111" id="tBW-4q-0I3"/>
+                    <navigationItem key="navigationItem" title="OMRON HEM-6111" id="tBW-4q-0I3">
+                        <barButtonItem key="backBarButtonItem" title="Record" id="r2u-oA-HdY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="lhV-v7-yKc">
+                            <connections>
+                                <segue destination="hQL-pL-KS2" kind="show" id="ami-90-bIe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="vWN-lv-6L6" id="fJu-hu-8IW"/>
                         <outlet property="segment" destination="Jnd-Nk-Z6d" id="9OP-3E-t1E"/>
                         <outletCollection property="entries" destination="4Od-h8-hR1" collectionClass="NSMutableArray" id="u4R-RK-xS4"/>
                         <outletCollection property="entries" destination="W3K-0f-yw5" collectionClass="NSMutableArray" id="mxg-5Y-siY"/>
@@ -213,6 +243,161 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-pU-l7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="157"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="GY6-7q-XhO">
+            <objects>
+                <tableViewController title="History" id="hQL-pL-KS2" customClass="AZHistoryViewController" customModule="Sphygmomanometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="X3t-NT-PUC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="q0Z-Wd-yxa">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="366"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rgi-D2-Vmh">
+                                    <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pose:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-tw-SYA">
+                                            <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-bc-IAG" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                            <state key="normal" title="Lie"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgV-Np-eYI" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                            <state key="normal" title="Sit"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uy-xk-FHU" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="286.66666666666674" y="0.0" width="87.333333333333314" height="30"/>
+                                            <state key="normal" title="Stand"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tro-Ka-rFn">
+                                    <rect key="frame" x="20" y="58" width="374" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4w-wR-Hpp">
+                                            <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCf-6C-iGu" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                            <state key="normal" title="Systolic"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVq-EW-jLt" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                            <state key="normal" title="Diastolic"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYM-wZ-bdK" customClass="AZButton" customModule="Sphygmomanometer" customModuleProvider="target">
+                                            <rect key="frame" x="286.66666666666674" y="0.0" width="87.333333333333314" height="30"/>
+                                            <state key="normal" title="Pulse"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yno-FB-Gm1">
+                                    <rect key="frame" x="20" y="96" width="374" height="250"/>
+                                    <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Yno-FB-Gm1" firstAttribute="leading" secondItem="q0Z-Wd-yxa" secondAttribute="leading" constant="20" symbolic="YES" id="5Jf-jW-3C3"/>
+                                <constraint firstAttribute="trailing" secondItem="rgi-D2-Vmh" secondAttribute="trailing" constant="20" symbolic="YES" id="7eh-W8-xs8"/>
+                                <constraint firstItem="Tro-Ka-rFn" firstAttribute="leading" secondItem="q0Z-Wd-yxa" secondAttribute="leading" constant="20" symbolic="YES" id="A1j-nk-eaP"/>
+                                <constraint firstItem="Tro-Ka-rFn" firstAttribute="top" secondItem="rgi-D2-Vmh" secondAttribute="bottom" constant="8" symbolic="YES" id="Asu-hX-Zdg"/>
+                                <constraint firstAttribute="trailing" secondItem="Tro-Ka-rFn" secondAttribute="trailing" constant="20" symbolic="YES" id="C8V-nU-9Up"/>
+                                <constraint firstAttribute="trailing" secondItem="Yno-FB-Gm1" secondAttribute="trailing" constant="20" symbolic="YES" id="CKu-bc-DbT"/>
+                                <constraint firstItem="Yno-FB-Gm1" firstAttribute="top" secondItem="Tro-Ka-rFn" secondAttribute="bottom" constant="8" symbolic="YES" id="IaM-Z5-UE7"/>
+                                <constraint firstItem="rgi-D2-Vmh" firstAttribute="leading" secondItem="q0Z-Wd-yxa" secondAttribute="leading" constant="20" symbolic="YES" id="JAb-Xp-pt8"/>
+                                <constraint firstItem="rgi-D2-Vmh" firstAttribute="top" secondItem="q0Z-Wd-yxa" secondAttribute="top" constant="20" symbolic="YES" id="KbB-3z-Dp3"/>
+                                <constraint firstAttribute="bottom" secondItem="Yno-FB-Gm1" secondAttribute="bottom" constant="20" symbolic="YES" id="ygv-Qa-DQ5"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="U3E-8W-d0r" customClass="AZTableViewCell" customModule="Sphygmomanometer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="394" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U3E-8W-d0r" id="6Gl-X0-vm9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GJl-hI-7LN">
+                                            <rect key="frame" x="0.0" y="20" width="0.0" height="59.666666666666671"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AcD-BC-b8E">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="59.666666666666671"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="mm:ss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wC-uJ-eou">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Pose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfO-lf-nQO">
+                                                            <rect key="frame" x="0.0" y="34" width="0.0" height="25.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sys/dia mmHg" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-qH-QEj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="59.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❤️ pulse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ7-hE-hcZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="59.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GJl-hI-7LN" firstAttribute="centerY" secondItem="6Gl-X0-vm9" secondAttribute="centerY" id="2oV-Kf-zPO"/>
+                                        <constraint firstItem="GJl-hI-7LN" firstAttribute="centerX" secondItem="6Gl-X0-vm9" secondAttribute="centerX" id="44K-du-3Th"/>
+                                        <constraint firstAttribute="bottom" secondItem="GJl-hI-7LN" secondAttribute="bottom" constant="20" symbolic="YES" id="Ds4-hL-lJS"/>
+                                        <constraint firstItem="GJl-hI-7LN" firstAttribute="leading" secondItem="6Gl-X0-vm9" secondAttribute="leading" constant="20" symbolic="YES" id="NKB-vn-ABR"/>
+                                        <constraint firstAttribute="trailing" secondItem="GJl-hI-7LN" secondAttribute="trailing" constant="20" symbolic="YES" id="V8z-y5-oTO"/>
+                                        <constraint firstItem="GJl-hI-7LN" firstAttribute="top" secondItem="6Gl-X0-vm9" secondAttribute="top" constant="20" symbolic="YES" id="qtN-M6-W2d"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bloodPressureLabel" destination="7S7-qH-QEj" id="V5g-4w-CaC"/>
+                                    <outlet property="poseLabel" destination="pfO-lf-nQO" id="tMA-ED-zHg"/>
+                                    <outlet property="pulseLabel" destination="oQ7-hE-hcZ" id="2C2-9w-AlC"/>
+                                    <outlet property="timeLabel" destination="4wC-uJ-eou" id="77B-z5-ocz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hQL-pL-KS2" id="mMe-8Z-xDq"/>
+                            <outlet property="delegate" destination="hQL-pL-KS2" id="iWd-ih-ODB"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outletCollection property="poses" destination="uOw-bc-IAG" collectionClass="NSMutableArray" id="Ajf-wa-9G8"/>
+                        <outletCollection property="poses" destination="hgV-Np-eYI" collectionClass="NSMutableArray" id="omc-KI-VtD"/>
+                        <outletCollection property="poses" destination="7uy-xk-FHU" collectionClass="NSMutableArray" id="Txl-gd-QCF"/>
+                        <outletCollection property="dataTypes" destination="iCf-6C-iGu" collectionClass="NSMutableArray" id="0DH-Dv-3RA"/>
+                        <outletCollection property="dataTypes" destination="ZVq-EW-jLt" collectionClass="NSMutableArray" id="6Iv-1A-fND"/>
+                        <outletCollection property="dataTypes" destination="cYM-wZ-bdK" collectionClass="NSMutableArray" id="VVq-UE-clj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTf-IQ-uXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1289.8550724637682" y="155.70652173913044"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Xg-xm-9vU">

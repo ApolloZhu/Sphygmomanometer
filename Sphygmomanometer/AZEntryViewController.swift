@@ -14,17 +14,19 @@ class AZEntryViewController: UITableViewController {
 
     @IBOutlet weak var segment: UISegmentedControl!
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+
     @IBAction func submit(_ sender: UIButton) {
         sender.isEnabled = false
+        defer { sender.isEnabled = true }
         let data = entries.flatMap { Int($0.text!) }
         guard data.count == 3 else { return }
-        AZSphygmomanometerSample(systolic: data[0], diastolic: data[1], pulse: data[2], bodyPosition: AZBodyPossition(rawValue: segment.selectedSegmentIndex)!).store()
+        AZSphygmomanometerSample(systolic: data[0], diastolic: data[1], pulse: data[2], bodyPosition: AZBodyPossition(rawValue: segment.selectedSegmentIndex)!, date: datePicker.date).store()
         entries.forEach {
             $0.resignFirstResponder()
             $0.text = ""
         }
         segment.cycle()
-        sender.isEnabled = true
     }
 }
 
