@@ -14,12 +14,8 @@ class AZEntryViewController: UITableViewController {
 
     @IBOutlet weak var segment: UISegmentedControl!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        azRequestHealthStoreAccess()
-    }
-
-    @IBAction func submit() {
+    @IBAction func submit(_ sender: UIButton) {
+        sender.isEnabled = false
         let data = entries.flatMap { Int($0.text!) }
         guard data.count == 3 else { return }
         AZSphygmomanometerSample(systolic: data[0], diastolic: data[1], pulse: data[2], bodyPosition: AZBodyPossition(rawValue: segment.selectedSegmentIndex)!).store()
@@ -27,5 +23,13 @@ class AZEntryViewController: UITableViewController {
             $0.resignFirstResponder()
             $0.text = ""
         }
+        segment.cycle()
+        sender.isEnabled = true
+    }
+}
+
+extension UISegmentedControl {
+    func cycle() {
+        selectedSegmentIndex = (selectedSegmentIndex + 1) % numberOfSegments
     }
 }

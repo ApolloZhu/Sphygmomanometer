@@ -134,7 +134,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jnd-Nk-Z6d">
+                                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jnd-Nk-Z6d">
                                                             <rect key="frame" x="72.333333333333343" y="0.0" width="303.66666666666663" height="29"/>
                                                             <segments>
                                                                 <segment title="Lie"/>
@@ -163,7 +163,7 @@
                                                     <rect key="frame" x="182.66666666666666" y="7" width="49" height="30"/>
                                                     <state key="normal" title="Submit"/>
                                                     <connections>
-                                                        <action selector="submit" destination="9Vm-Xp-dDd" eventType="touchUpInside" id="0L0-dI-8qF"/>
+                                                        <action selector="submit:" destination="9Vm-Xp-dDd" eventType="touchUpInside" id="gUt-Ie-ABl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

@@ -1,5 +1,5 @@
 //
-//  AZHKAPI.swift
+//  AZHealthKit.swift
 //  Sphygmomanometer
 //
 //  Created by Apollo Zhu on 6/29/17.
@@ -84,12 +84,4 @@ extension HKUnit {
     static func beatsPerMinute() -> HKUnit {
         return HKUnit.count().unitDivided(by: .minute())
     }
-}
-
-func azRequestHealthStoreAccess() {
-    let requestTypes =
-        Set([.bloodPressureSystolic, .bloodPressureDiastolic, .heartRate]
-            .flatMap { HKQuantityType.quantityType(forIdentifier: $0) })
-    healthStore.requestAuthorization(toShare: requestTypes, read: requestTypes)
-    { _,_ in }
 }
